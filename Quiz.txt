@@ -1,0 +1,2 @@
+1: What are the primitive types in Python?
+    We have strings, numbers and boolean numbers. And numbers can br integer, floats or complex numbers
