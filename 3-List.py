@@ -1,7 +1,7 @@
 '''
 Date: 2021-03-13 15:11:10
 LastEditors: GC
-LastEditTime: 2021-10-19 20:33:08
+LastEditTime: 2022-02-24 15:37:52
 FilePath: \Mosh Course 1\3-List.py
 '''
 
@@ -155,6 +155,7 @@ FilePath: \Mosh Course 1\3-List.py
 # ]
 
 # prices = list(map(lambda item: item[1], items))
+
 # # If we wanna get the price of each item, we can write an expression like this:
 # price1 = [item[1] for item in items]
 
@@ -190,6 +191,7 @@ FilePath: \Mosh Course 1\3-List.py
 #  --> Let's say if you are dealing with a sequence of objects, and you'd better make sure you don't accidentally
 #      modify the sequence, you don't accidentally add a new object to it or remove an existing objects,
 #      so instead of list you can use the tuple to prevent these accidental errors.
+
 # number1 = (1, 3, 5, 6)
 # print(number1[1])
 # print(number1[1:3])
@@ -234,6 +236,7 @@ FilePath: \Mosh Course 1\3-List.py
 # Arrays(Take less memory and perform a little bit faster, we will see the difference only if we are dealing with a large list of numbers):
 #    --> Use array only if you are dealing with large sequence of numbers, and you encounter performance problems.
 #    --> In other cases, use list or tuple by default.
+
 # from array import array
 # numbers = array("i", [1, 3, 4])
 # numbers.append(6)
@@ -248,6 +251,7 @@ FilePath: \Mosh Course 1\3-List.py
 #    --> Which is basically a collection with no duplicates. Set is an unordered collection(无序集合) of unique items,
 #    --> we can't have duplicate and these objects are on order, they are not in sequence.
 #    --> And we can't access them using an index.
+
 # numbers = [1, 1, 1, 3, 5, 6]
 # unique = set(numbers)
 
@@ -262,18 +266,25 @@ FilePath: \Mosh Course 1\3-List.py
 # numbers1 = [1, 2, 3, 4, 3, 3, 7]
 # first = set(numbers1)
 # # 1, 2, 3, 4, 7
+
 # second = {1, 6, 5, 9}
+
 # print(first | second)
 # #   --> The result includes all the items that are either in the first set or the second set.
+
 # print(first & second)
 # #   --> It will return a new set that includes all the items are in both first and second sets.
+
 # print(first - second)
 # #   --> The first set has this additionally numbers that we don't have in the second set.
+
 # print(first ^ second)
 # #   --> Symmetric difference. This will return the items that are either in the first ser or second set but not the both.
+
 # print(first[1])
 # #   --> 'set' object is not subscriptable. 'set' object does not support indexting.
 # #   --> So if you want to access items by an index you need to use the list.
+
 # if 1 in first:
 #     print("Yes!")
 # #   --> We can check for the existence of an item in a set.
@@ -336,6 +347,7 @@ FilePath: \Mosh Course 1\3-List.py
 
 # Unpacking Operators:
 #     --> We can use the unpacking operators to take out individual values in any iterable.
+
 # Example one:
 # numbers = [1, 3, 4]
 # print(*numbers)
@@ -360,11 +372,12 @@ FilePath: \Mosh Course 1\3-List.py
 # second = {"x": 67, "y": 808}
 # combined = {**first, **second, "z": 567}
 # print(combined)
-# #   --> If you have multiple items with the same key, the last value will be use
+# #   --> If you have multiple items with the same key, the last value will be used
 
 
-# Dictionaries:
-#     We use dictionaries in situations where we want to store information that comes as key value pairs(键值对)
+# Dictionaries:(Key-Value pairs, unordered, mutable)
+#     We use dictionaries in situations where we want to store information that comes as key value pairs
+
 # Example:
 #     Name: John Fish
 #     Email: John@gmail.com
@@ -374,44 +387,57 @@ FilePath: \Mosh Course 1\3-List.py
 #           Each key is associated with a value, so this is where we use a dictionary. With dictionary, we can store a bunch of key value pairs.
 #           Each key should be unique in a dictionary
 # //
-# print(customer.get("hello", "error")) --> 如果不能找到第一个引号所对应的值，则会打印出第二个引号中的内容
+# print(customer.get("hello", "error")) --> If it can not find the value of this first "", then it will return the value of the second "".
+
 # customer["age"] = 123
 # print(customer["age"]) ---> The way to update the value
 # customer["birthday"] = "Jan 1 1990"
 # print(customer["birthday"])   ---> 添加新的键值对
 #
-#
+
 # customer = {
 #     "name" : "John Fish",
 #     "age" : 22,
 #     "is_verified" : True
 # }
+
 # print(customer["name"])
 # #    --> One way to get the value of "name"
+
 # print(customer.get("name"))
 # #    --> The other way to get the value of "name", if the key doesn't exist, by default it will return None.
+
 # print(customer.get("hello", "error"))
+
 # customer["age"] = 123
 # print(customer["age"])
+
 # customer["birthday"] = "Jan 1 1990"
 # print(customer["birthday"])
 
 
 # point = dict(x=1, y=3)
-# print(point["x"])
-# point["y"] = 10
-# # update
-# point["z"] = 34
-# # Add a new key
-# del point["z"]
-# # Delete an item
 # print(point)
+# print(point["x"])
+
+# # update
+# point["y"] = 10
+
+# # Add a new key
+# point["z"] = 34
+
+# # Delete an item --> We can use some methods: del; pop(); popitem()
+# del point["z"]
+
+# print(point)
+
+# # Loop over the dictionary
 # for key in point:
 #     print(key, point[key])
-# # Loop over the dictionary
+
+# # Another way to iterate the dictionary
 # for key, value in point.items():
 #     print(key, value)
-# # Another way to iterate the dictionary
 
 
 # //
@@ -467,6 +493,7 @@ FilePath: \Mosh Course 1\3-List.py
 # # All in all, we can use comprehensions with lists, sets, dictionaries. But we can't use it in tuple.
 
 
+
 # Generators:
 #    --> There are situations that might be working with a really large data set,
 #    --> with these situations, it's more efficient to use a generator object, generate a new value in each iteration.
@@ -477,10 +504,13 @@ FilePath: \Mosh Course 1\3-List.py
 # for x in values:
 #     print(x)
 
-# # how to get the size of an object?
+
+# how to get the size of an object?
 # from sys import getsizeof
+
 # values = (x * 2 for x in range(1000))
 # print("gen: ", getsizeof(values))
+
 # values = [x * 2 for x in range(1000)]
 # print("list: ", getsizeof(values))
 
@@ -502,8 +532,10 @@ FilePath: \Mosh Course 1\3-List.py
 # Parameters
 #    --> We will learn how to pass your information to your functions
 # //
+
 # Parameters are the holes or placeholders that we define in our function for receiving information
 # Arguments are the actual pieces of information that we supply to these functions, like positional arguments and key arguments
+
 # def greet_user(name):
 #     print(f"Hi {name}")
 #     print("Welcome to my class")
@@ -535,6 +567,7 @@ FilePath: \Mosh Course 1\3-List.py
 
 
 # Return statement:
+
 # def square(number):
 #     return number * number
 
@@ -569,6 +602,7 @@ FilePath: \Mosh Course 1\3-List.py
 #     total = 1
 #     for number in numbers:
 #         total *= number
+#         # Result: 2 * 3 * 4 * 5 = 120
 #     return total
 
 

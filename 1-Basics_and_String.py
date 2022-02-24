@@ -1,8 +1,8 @@
 '''
 Date: 2021-03-08 14:20:19
 LastEditors: GC
-LastEditTime: 2021-10-17 21:29:49
-FilePath: \Mosh Course 1\Basics_and_String.py
+LastEditTime: 2022-01-07 20:45:18
+FilePath: \Mosh Course 1\1-Basics_and_String.py
 '''
 
 # name = 'John Smith'
@@ -33,7 +33,7 @@ FilePath: \Mosh Course 1\Basics_and_String.py
 # print(weight_kg)
 
 
-# course01 = "Python's course for beginners"
+# course01 = "Python course for beginners"
 # course02 = 'Python for "beginners"'
 # course03 = '''
 # Hi John,
