@@ -1,10 +1,10 @@
 '''
 Date: 2021-03-22 19:26:25
 LastEditors: GC
-LastEditTime: 2021-10-21 14:48:42
+LastEditTime: 2022-02-25 16:41:24
 FilePath: \Mosh Course 1\6-Classes.py
 '''
-# Classes:
+# 1: Classes:
 #      --> We can use classes to define new types to model real concepts. These types can have methods that we define in the
 #             body of class and they can also have attributes that we can set anywhere in our programs.
 # The difference of class and object:
@@ -26,6 +26,7 @@ FilePath: \Mosh Course 1\6-Classes.py
 
 # point1 = Point()
 #     # --> Creating a Point object
+
 # print(type(point1))
 # print(isinstance(point1, Point))
 # # isinstance() --> Sometimes we have an object and we wanna know if this object is an instance of a given class.
@@ -41,7 +42,7 @@ FilePath: \Mosh Course 1\6-Classes.py
 # print(point2.x)
 
 
-# Constructors
+# 2: Constructors
 #   --> A constructor is a function that gets called at the time of creating an object.
 # from abc import ABC, abstractmethod
 
@@ -56,7 +57,7 @@ FilePath: \Mosh Course 1\6-Classes.py
 #         #  And we can use "self" to set the x & y attritutes. We can set it to some default value like 0,
 #         #  or this x argument or y argument I have been received in this method.
 
-#         # From these line of codes,  we can know that we defined two attributes x1 & y1 for point1 object in the constructor
+#         # From these line of codes, we can know that we defined two attributes x1 & y1 for point1 object in the constructor
 #         # of the Point class. So whenever we create a new Point object, this Point object will have these attributes by default.
 
 #     def move(self):
@@ -88,6 +89,7 @@ FilePath: \Mosh Course 1\6-Classes.py
 
 
 # Practice1:
+
 # class Person():
 #     def __init__(self, name):
 #          self.name = name
@@ -101,9 +103,6 @@ FilePath: \Mosh Course 1\6-Classes.py
 
 
 # Practice 2:
-
-# from _typeshed import Self
-
 
 # class Student:
 #     def __init__(self, name, age, grade) -> None:
@@ -148,7 +147,8 @@ FilePath: \Mosh Course 1\6-Classes.py
 # print(course.add_student(s3))
 
 
-# Class VS Instance Attributes:
+
+# 3: Class VS Instance Attributes:
 #   --> Most of time, we will be using instance attributes, but there are times that you might want to define a class level
 #       attribute that is shared accross all objects at a giving type.
 
@@ -156,9 +156,9 @@ FilePath: \Mosh Course 1\6-Classes.py
 #     default_color = "red"
 # #   -> We can also define a class attribute in the body of this class, and we can read this via a class reference on an object reference.
 
-#     def __init__(self, x, y):
-#         self.x = x
-#         self.y = y
+#     def __init__(self, x1, y1):
+#         self.x = x1
+#         self.y = y1
 
 #     def move(self):
 #         print("move")
@@ -170,9 +170,11 @@ FilePath: \Mosh Course 1\6-Classes.py
 # Point.default_color = "Yellow"
 # #  --> Be careful, I am using a class reference, so i am not working with any points objects, i am just working with Point class.
 # #  --> And from this line of code, we can know that we have changed the default color to Yellow.
+
 # point1 = Point(10, 20)
 # print(point1.default_color)
 # #  --> We can use this object reference to get access to the default color attributes.
+
 # print(Point.default_color)
 # #  --> We can also use this Point object reference to get access to the default color attributes.
 
@@ -196,7 +198,11 @@ FilePath: \Mosh Course 1\6-Classes.py
 # # so every point objects can have different values for this attribute.
 
 
-# Class VS Instance Methods:
+
+
+
+
+# 4: Class VS Instance Methods:
 #   --> We also have the same concept around the methods that we define in a class, so we have instance method as well as class method.
 
 
@@ -205,15 +211,16 @@ FilePath: \Mosh Course 1\6-Classes.py
 #         self.x = x
 #         self.y = y
 
-
 #     # How to define a method at the class level.
 #     @classmethod
 #     #  To make this method as a class method, this is what we call a decorator(I need some ways to explain the behavior of a method or a function),
 #     def zero(cls):
 #         # With the "cls" --> We can know that we are not working with a point object or point instance.
+        
 #         return cls(0, 0)
 #         # This is exactly like calling --> Point(0, 0). Their difference is that at the runing-time, when we call the zero() method,
 #         # Python interpreter automatically pass a reference to the Point class to the zero() method.
+    
 #     def draw(self):
 #         print(f"Point ({self.x} {self.y})")
 
@@ -232,7 +239,10 @@ FilePath: \Mosh Course 1\6-Classes.py
 # point.draw()
 
 
-# Static Method:
+
+
+
+# 5: Static Method:
 # class Math:
 #     @staticmethod
 #     def plus(x):
@@ -244,8 +254,14 @@ FilePath: \Mosh Course 1\6-Classes.py
 # print(Math.plus(3))
 
 
-# Magic Methods:
+
+
+
+
+
+# 6: Magic Methods:
 #   --> Two examples of magic method (__init__ and __str__). For more information about the magic methods, go to Google and search "Python 3 Magic Methods"
+
 # class Point:
 #     def __init__(self, x, y):
 #         self.x = x
@@ -260,9 +276,15 @@ FilePath: \Mosh Course 1\6-Classes.py
 
 # point = Point(1, 2)
 # print(point)
+# print(point.draw())
 
 
-# Comparing Objects:
+
+
+
+
+
+# 7: Comparing Objects:
 #    --> There are times we need to compare two objects.
 
 # class Point:
@@ -272,7 +294,7 @@ FilePath: \Mosh Course 1\6-Classes.py
 
 #     def __eq__(self, other) -> bool:
 #         return self.x == other.x and self.y == other.y
-
+ 
 #     def __gt__(self, other1) -> bool:
 #         return self.x > other1.x and self.y > other1.y
 
@@ -282,14 +304,21 @@ FilePath: \Mosh Course 1\6-Classes.py
 
 # point1 = Point(3, 4)
 # other1 = Point(1, 2)
+
 # print(point == other)
-# # Without the magic meethod, From the result, we will get the "false". Because by default, this equality operator compares the references or addresses
+# # Without the magic method, From the result, we will get the "false". Because by default, this equality operator compares the references or addresses
 # # of these two objects in memory. In order to solve this problem, we can use the magic method.
+
 # print(point1 > other1)
 
 
-# Supporting Arithmetic Operations :
+
+
+
+
+# 8: Supporting Arithmetic Operations:
 #   --> We also have magic method for performing arithmetic operations between two objects
+
 # class Point:
 #     def __init__(self, x, y) -> None:
 #         self.x = x
@@ -311,8 +340,15 @@ FilePath: \Mosh Course 1\6-Classes.py
 # # print(point.y + other.x)
 
 
-# Creating Custom Containers(定制容器):
+
+
+
+
+
+
+# 9: Creating Custom Containers:
 #   --> There are times you wanna create your own custom container types.
+
 # class TagCloud:
 #     def __init__(self) -> None:
 #         self.tags = {}
@@ -355,7 +391,7 @@ FilePath: \Mosh Course 1\6-Classes.py
 # print(len(cloud))
 
 
-# Private members:
+# 10: Private members:
 #   --> How we can make certain attributes or certain methods in a class private. If a prefix with double underscores(__)
 #   --> on their squares, they are considered private.
 
@@ -404,8 +440,12 @@ FilePath: \Mosh Course 1\6-Classes.py
 # #  Using double underscores is more of a convention to prevent accidental access of this private members.
 
 
-# Properties:
+
+
+
+# 11: Properties:
 #   --> There are times that you wanna have control over an attribute in a class.
+
 # class Product:
 #     def __init__(self, price) -> None:
 #         self.set_price(price)
@@ -424,14 +464,23 @@ FilePath: \Mosh Course 1\6-Classes.py
 
 
 # product = Product(-40)
-# #  Although the Python interpreter won't give me error, but it is not good. How can we prevent this? How can we ensure that our
-# #  products don't have a negative price.
-# #    --> One simple way: we can make this filed (price) private (__price) and then define two methods for getting and setting the value
-# #    --> of this attribute.
-# #    --> Another advanced way: Property is an object that sit in front of an attribute, it allows us to get for set the value of that attribute.
+#  Although the Python interpreter won't give me error, but it is not good. How can we prevent this? How can we ensure that our
+#  products don't have a negative price.
+#    --> One simple way: we can make this filed (price) private (__price) and then define two methods for getting and setting the value
+#    --> of this attribute.
+#    --> Another advanced way: Property is an object that sit in front of an attribute, it allows us to get for set the value of that attribute.
 
 
-# The Solution with Property:
+
+
+
+
+
+
+
+
+# 12: The Solution with Property:
+
 # class Product:
 #     def __init__(self, price) -> None:
 #         self.set_price(price)
@@ -451,8 +500,10 @@ FilePath: \Mosh Course 1\6-Classes.py
 #     # There are four functions which are optional. Be careful, i am not calling these two method, i am simply passing a reference to them
 #     # So when we call this built-in property function, with this arguments, this function will return a property object,
 #     # that property object will use the get_price to read the value of the price attribute,
+
 # product = Product(10)
 # print(product.price)
+
 
 
 # Use the property class decorator to make our program better, our implemention will be cleaner and it will be less noisy:
@@ -479,7 +530,12 @@ FilePath: \Mosh Course 1\6-Classes.py
 # print(product.price)
 
 
-# Inheritance:
+
+
+
+
+
+# 13: Inheritance:
 #   --> Inheritance is a mechanism that allows us to define the common behavior or common function in one class.
 #   --> Inheritance is not limited to method, we can also inherit the attributes of a base class.
 
@@ -516,7 +572,13 @@ FilePath: \Mosh Course 1\6-Classes.py
 # cat1.be_annoying()
 
 
-# The Object Class:
+
+
+
+
+
+
+# 14: The Object Class:
 #  --> We have a class called Object, and that is the base class for all classes in Python, every class we have directly or indirectly
 #      derived from the object class.
 
@@ -550,7 +612,10 @@ FilePath: \Mosh Course 1\6-Classes.py
 # print(issubclass(Dog, object))
 
 
-# Method Overriding:
+
+
+
+# 15: Method Overriding:
 #  --> What if we want to add a new Constructor to the Dog object and initialize its weight?
 
 # class Mammal(object):
@@ -582,6 +647,9 @@ FilePath: \Mosh Course 1\6-Classes.py
 # Run this program, we will get an AttributeError. Why? the reason is that the construtcor in the Mammal class was not executed.
 # In other word, the constructor that would defined in the Dog class replace the constructor in the base class.
 # This is what we call method overriding. That is say you are overriding or replacing a method in the base class.
+
+
+
 
 
 # But what if we still wanna execute the constructor in the Mammal class and initialize the age of an animal, what should we do?
@@ -628,7 +696,10 @@ FilePath: \Mosh Course 1\6-Classes.py
 # From these two example, we can know that Method Overriding means replacing or extending a method defined in the base class.
 
 
-# Multi-level Inheritance
+
+
+
+# 16: Multi-level Inheritance
 #  --> We can significantly increase the complexity of our software. Here is an example:
 
 # class Animal:
